@@ -61,10 +61,24 @@ public class Main {
 ### 🤔 Preguntas de Análisis
 
 * Carga Perezosa: ¿Cuándo se ejecuta el constructor de RealImage en el código original vs en el código con Proxy?
+
+En el código original, el constructor de RealImage se ejecuta al crear el objeto y con el Proxy, se ejecuta hasta la primera llamada de display.
+
 * Transparencia: ¿El código cliente necesita saber si está trabajando con un Proxy o con el objeto real? ¿Por qué?
+
+No, el cliente solo usa la interfaz Image, así que no se da cuenta si trabaja con el Proxy o con el objeto real.
+
 * Rendimiento: ¿Qué ventajas de rendimiento ofrece el patrón Proxy en este escenario?
+
+La ventaja es que no se carga la imagen si nunca se muestra, y cuando se carga solo se hace una sola vez.
+
 * Control de Acceso: Además de la carga perezosa, ¿qué otros tipos de control podríamos implementar en el Proxy? (Ej: verificación de permisos, logging, cache)
+
+Se podría implementar un límite de visualizaciones, una marca de agua y una validación del archivo antes de cargarlo.
+
 * Principio SOLID: ¿Qué principio SOLID se aplica aquí al permitir que el Proxy y el RealImage implementen la misma interfaz?
+
+La sustitución de Liskov: ProxyImage y RealImage son intercambiables porque comparten la interfaz Image.
 
 ### 🧪 Pruebas a Realizar
 
